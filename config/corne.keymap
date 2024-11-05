@@ -9,6 +9,45 @@
 #include <dt-bindings/zmk/keys.h>
 
 / {
+    combos {
+        compatible = "zmk,combos";
+
+        RTabulation {
+            bindings = <&kp TAB>;
+            key-positions = <8 7>;
+        };
+
+        LTabulation {
+            bindings = <&kp TAB>;
+            key-positions = <4 3>;
+        };
+    };
+
+    behaviors {
+        homerowleft: homerowleft {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROWLEFT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            flavor = "balanced";
+            hold-trigger-key-positions = <13 14 15 16>;
+            tapping-term-ms = <180>;
+        };
+
+        homerowright: homerowright {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HOMEROWRIGHT";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <180>;
+            flavor = "balanced";
+            hold-while-undecided;
+            hold-trigger-key-positions = <19 20 21 22>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -20,10 +59,10 @@
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
             bindings = <
-&none  &kp Q  &kp W  &kp F     &kp P  &kp B        &kp J    &kp L  &kp U      &kp Y    &kp BACKSPACE  &none
-&none  &kp A  &kp R  &kp S     &kp T  &kp G        &kp M    &kp N  &kp E      &kp I    &kp O          &none
-&none  &kp X  &kp C  &kp D     &kp V  &kp Z        &kp K    &kp H  &kp COMMA  &kp DOT  &kp FSLH       &none
-                     &kp LGUI  &mo 1  &kp SPACE    &kp RET  &mo 2  &kp RALT
+&none  &kp Q                    &kp W                    &kp F                      &kp P                 &kp B        &kp J    &kp L                          &kp U                        &kp Y                      &kp COLON                  &none
+&none  &homerowleft LEFT_GUI A  &homerowleft LEFT_ALT R  &homerowleft LEFT_SHIFT S  &homerowleft LCTRL T  &kp G        &kp M    &homerowright RIGHT_CONTROL N  &homerowright RIGHT_SHIFT E  &homerowright RIGHT_ALT I  &homerowright RIGHT_GUI O  &none
+&none  &kp X                    &kp C                    &kp D                      &kp V                 &kp Z        &kp K    &kp H                          &kp COMMA                    &kp DOT                    &kp FSLH                   &none
+                                                         &kp ESCAPE                 &mo 1                 &kp SPACE    &kp RET  &mo 2                          &kp BACKSPACE
             >;
         };
 
@@ -54,6 +93,15 @@
 &none  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &none
 &none  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &none
                          &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+            >;
+        };
+
+        configuration {
+            bindings = <
+&trans  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &none       &trans  &trans  &trans  &bt BT_CLR  &trans
+&trans  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &trans      &none   &none   &none   &trans      &trans
+&trans  &trans         &trans         &trans         &trans         &trans           &trans      &trans  &trans  &trans  &trans      &trans
+                                      &trans         &trans         &bt BT_PRV       &bt BT_NXT  &trans  &trans
             >;
         };
     };
