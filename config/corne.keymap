@@ -92,19 +92,19 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp EXCL  &kp AT  &kp HASH  &kp DLLR  &kp PRCNT    &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &none
-&none  &trans    &trans  &trans    &trans    &trans       &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &none
-&none  &trans    &trans  &trans    &trans    &trans       &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &none
-                         &kp LGUI  &trans    &kp SPACE    &kp RET    &trans     &kp RALT
+&none  &kp EXCL           &kp AT         &kp HASH   &kp DLLR          &kp PRCNT           &kp CARET  &kp AMPS   &kp ASTRK  &kp LPAR  &kp RPAR  &none
+&none  &kp DOUBLE_QUOTES  &kp LESS_THAN  &kp TILDE  &kp GREATER_THAN  &kp SINGLE_QUOTE    &kp MINUS  &kp EQUAL  &kp LBKT   &kp RBKT  &kp BSLH  &none
+&none  &trans             &trans         &trans     &trans            &kp GRAVE           &kp UNDER  &kp PLUS   &kp LBRC   &kp RBRC  &kp PIPE  &none
+                                         &kp LGUI   &trans            &kp SPACE           &kp RET    &trans     &kp RALT
             >;
         };
 
         configuration {
             bindings = <
-&trans  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &none       &trans  &trans  &trans  &bt BT_CLR  &trans
-&trans  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &trans      &none   &none   &none   &trans      &trans
-&trans  &trans         &trans         &trans         &trans         &trans           &trans      &trans  &trans  &trans  &trans      &trans
-                                      &trans         &trans         &bt BT_PRV       &bt BT_NXT  &trans  &trans
+&trans  &bt BT_SEL 0   &bt BT_SEL 1   &bt BT_SEL 2   &bt BT_SEL 3   &bt BT_SEL 4     &kp C_AC_NEXT_KEYBOARD_LAYOUT_SELECT  &trans  &trans  &trans  &bt BT_CLR  &trans
+&trans  &bt BT_DISC 0  &bt BT_DISC 1  &bt BT_DISC 2  &bt BT_DISC 3  &bt BT_DISC 4    &trans                                &none   &none   &none   &trans      &trans
+&trans  &trans         &trans         &trans         &trans         &trans           &trans                                &trans  &trans  &trans  &trans      &trans
+                                      &trans         &trans         &bt BT_PRV       &bt BT_NXT                            &trans  &trans
             >;
         };
     };
