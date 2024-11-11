@@ -97,10 +97,10 @@
             //                    | GUI |     | SPC |   | ENT |     | ALT |
 
             bindings = <
-&none  &kp KP_DIVIDE  &kp N7        &kp N8        &kp NUMBER_9  &kp KP_MULTIPLY    &kp PAGE_UP    &kp HOME        &trans          &trans        &kp END          &none
-&none  &kp KP_DOT     &kp NUMBER_4  &kp N5        &kp NUMBER_6  &kp PLUS           &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &trans
-&none  &kp N0         &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp MINUS          &trans         &trans          &trans          &trans        &trans           &trans
-                                    &trans        &trans        &trans             &trans         &trans          &trans
+&none  &kp KP_DIVIDE                 &kp N7                            &kp N8                          &kp NUMBER_9  &kp KP_MULTIPLY    &kp PAGE_UP    &kp HOME        &trans          &trans           &kp END            &none
+&none  &kp KP_DOT                    &kp NUMBER_4                      &kp N5                          &kp NUMBER_6  &kp PLUS           &kp PAGE_DOWN  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW     &kp RIGHT_ARROW    &trans
+&none  &homerowleft LEFT_CONTROL N0  &homerowleft LEFT_SHIFT NUMBER_1  &homerowleft LEFT_ALT NUMBER_2  &kp NUMBER_3  &kp MINUS          &trans         &trans          &kp RIGHT_ALT   &kp RIGHT_SHIFT  &kp RIGHT_CONTROL  &trans
+                                                                       &trans                          &trans        &trans             &trans         &trans          &trans
             >;
         };
 
